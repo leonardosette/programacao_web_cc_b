@@ -1,1 +1,3 @@
-# programacao_web_cc_b
+# programacao web turma b de Ciências da Computação
+
+Repositório da disciplina 
