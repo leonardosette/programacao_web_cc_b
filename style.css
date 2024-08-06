@@ -1,0 +1,30 @@
+.center {
+    background: linear-gradient(45deg , #757397 10%,transparent 11%, transparent 89% , #757397 90%),linear-gradient(135deg , #757397 10%,transparent 11%, transparent 89% , #757397 90%),radial-gradient(circle, transparent 25%, #ffffff  26%),linear-gradient(45deg, transparent 46%, #757397 47%, #757397 52%, transparent 53%), linear-gradient(135deg, transparent 46%, #757397 47%, #757397 52%, transparent 53%);
+        background-size: 3em 3em;
+        background-color: #ffffff;
+        opacity: 1
+}
+    
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #444cf7;
+    color: #fff;
+    cursor: pointer;
+}
