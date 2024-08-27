@@ -1,41 +1,64 @@
-document.getElementById("meuFormulario").addEventListener("submit", function(event){
-    var isValid = true;
-    
-    // Expressão regular para validar o email
-    var emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-    
-    // Expressão regular para validar a senha
-    var senhaRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-    
-    // Para cada input no formulário
-    for (var i = 0; i < this.elements.length; i++) {
-      var elemento = this.elements[i];
-      
-      // Se o elemento é o campo de email
-      if (elemento.name === "email") {
-        if (!emailRegex.test(elemento.value)) {
-          isValid = false;
-          alert("Por favor, insira um email válido.");
-        }
-      }
-      
-      // Se o elemento é o campo de senha
-      if (elemento.name === "password") {
-        if (!senhaRegex.test(elemento.value)) {
-          isValid = false;
-          alert("A senha deve ter pelo menos 8 caracteres, incluindo pelo menos uma letra maiúscula e um número.");
-        }
-      }
-      
-      // Se o elemento não passar na validação
-      if (!elemento.checkValidity()) {
-        isValid = false;
-        alert("Por favor, preencha o campo: " + elemento.name);
-      }
+
+function submeter() {
+
+    let nome = document.getElementById("nome").value;
+    let cpf = document.getElementById("cpf").value;
+    let idade = document.getElementById("idade").value;
+
+    //console.log(cpf);
+    console.log(validaCpf(cpf));
+
+}
+
+function validaCpf(cpf) {
+
+    if(cpf == "") {
+        alert("Campo CPF não pode ser vazio.");
+        return false;
+    }
+
+    cpf = cpf.trim(); /*Retira os espaços*/
+
+    //Verificar se é composto SOMENTE de números, "." ou "-"
+    if(/[a-zA-Z]/.test(cpf)) {  /*Para procurar letras maiusculas e miniusculas no CPF*/
+        alert("CPF não pode conter letras.");
+        return false;
+    }
+
+    if(!/^[\d.-]+$/.test(cpf)) {  /*Serve para validar número, '.' e  o '-' atravês do [\d.-] e para não validar os outros caracteres atraves do ^ +$*/
+        alert("O CPF só pode ter números, '.' ou '-'");
+        return false;
     }
     
-    // Se o formulário não for válido, previna a submissão
-    if (!isValid) {
-      event.preventDefault();
+    if(cpf.length != 11 && cpf.length != 14) {
+        alert("Formato inválido!");
+        return false;
     }
-  });
+
+    cpf = cpf.replace("/[.-]/g", ""); /*Substitui o ponto por nada*/
+
+    //console.log(typeof(cpf));
+
+    // Interar 9 primeiros digitos, respeitando a seguinte regra:
+        let soma = 0;
+        let resto;
+    
+        // Verificar o primeiro dígito verificador
+        for (let i = 0; i < 9; i++) {
+            soma += parseInt(cpf.charAt(i)) * (10 - i);
+        }
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.charAt(9))) return false;
+    
+        // Verificar o segundo dígito verificador
+        soma = 0;
+        for (let i = 0; i < 10; i++) {
+            soma += parseInt(cpf.charAt(i)) * (11 - i);
+        }
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.charAt(10))) return false;
+    
+        return true;
+    };

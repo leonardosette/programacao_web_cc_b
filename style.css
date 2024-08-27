@@ -1,33 +1,60 @@
-.center {
-    background: linear-gradient(45deg , #757397 10%,transparent 11%, transparent 89% , #757397 90%),linear-gradient(135deg , #757397 10%,transparent 11%, transparent 89% , #757397 90%),radial-gradient(circle, transparent 25%, #ffffff  26%),linear-gradient(45deg, transparent 46%, #757397 47%, #757397 52%, transparent 53%), linear-gradient(135deg, transparent 46%, #757397 47%, #757397 52%, transparent 53%);
-        background-size: 3em 3em;
-        background-color: #ffffff;
-        opacity: 1
+body {
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('imagem.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
-    
+
+.form-container {
+    width: 700px;
+    height: 50vh;
+    padding: 16px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 15px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
-input[type="submit"] {
+button {
     padding: 10px;
-    border-radius: 5px;
+    background-color: #600c75;
+    color: white;
     border: none;
-    background-color: #444cf7;
-    color: #fff;
+    border-radius: 5px;
     cursor: pointer;
 }
-h1{
-    color: #ffffff;
+
+button:hover {
+    background-color: #bf47dd;
+}
+
+h1 {
+    text-align: center;
+}
+div {
+    display: flex;
+    flex-direction: column;
 }
