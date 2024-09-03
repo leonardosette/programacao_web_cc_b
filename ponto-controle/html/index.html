@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    
     <h1>Sistema de Controle de Ponto</h1>
     <p id="dataHora"></p>
     <select id="fusoHorario">
@@ -15,7 +16,16 @@
         <option value="America/Sao_Paulo">Brasília</option>
         <option value="Europe/Moscow">Moscow</option>
     </select>
-    <button onclick="alert('Ponto registrado!')">Bater Ponto</button>
-    <script src="../js/index.js"></script>
+    <button id="baterPonto">Bater Ponto</button>
+    <dialog id="modal">
+        <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%;">
+          <span id="close" style="color: #aaa; float: right; font-size: 28px; font-weight: bold;">&times;</span>
+          <button id="entrada">Entrada</button>
+          <button id="saida">Saída</button>
+          <button id="intervalo">Intervalo</button>
+          <button id="voltaIntervalo">Volta Intervalo</button>
+        </div>
+      </dialog>
+      <script src="../js/index.js"></script>
 </body>
 </html>
