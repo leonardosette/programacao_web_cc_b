@@ -22,22 +22,55 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-    display: none; /* Inicialmente oculto */
-  }
-  
-  #modal > div {
-    background-color: #fefefe;
-    margin: 15% auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#modalContent {
+    background-color: #fff;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-  }
-  
-  #close {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; /* Adiciona bordas arredondadas */
+}
+
+#close {
     color: #aaa;
-    float: right;
+    align-self: flex-end;
     font-size: 28px;
     font-weight: bold;
-  }
-  
+    cursor: pointer;
+}
+
+#close:hover {
+    color: black;
+}
+
+#modalDataHora {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
