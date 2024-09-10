@@ -9,24 +9,27 @@
     <h1>Sistema de Controle de Ponto</h1>
     <p id="dataHora"></p>
     <select id="fusoHorario">
+        <option value="America/Sao_Paulo">Brasília</option>
         <option value="America/New_York">New York</option>
         <option value="America/Los_Angeles">Los Angeles</option>
         <option value="Australia/Sydney">Sydney</option>
         <option value="Asia/Tokyo">Tokyo</option>
-        <option value="America/Sao_Paulo">Brasília</option>
         <option value="Europe/Moscow">Moscow</option>
     </select>
     <button id="baterPonto">Bater Ponto</button>
     <dialog id="modal">
-      <div id="modalContent">
-          <span id="close">&times;</span>
-          <p id="modalDataHora"></p>
-          <button id="entrada">Entrada</button>
-          <button id="saida">Saída</button>
-          <button id="intervalo">Intervalo</button>
-          <button id="voltaIntervalo">Volta Intervalo</button>
-      </div>
-  </dialog>  
-      <script src="../js/index.js"></script>
+        <div id="modalContent">
+            <span id="close">&times;</span>
+            <p id="modalDataHora"></p>
+            <select id="punch-in-select">
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+                <option value="intervalo">Intervalo</option>
+                <option value="voltaIntervalo">Volta do Intervalo</option>
+            </select>
+            <button id="punch-in-button">Bater Ponto</button>
+        </div>
+    </dialog>
+    <script src="../js/index.js"></script>
 </body>
 </html>
