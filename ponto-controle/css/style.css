@@ -136,3 +136,39 @@ select:focus {
     color: rgb(0, 0, 0);
     font-size: 1.5em;
 }
+
+#bannerNotificacao {
+    position: fixed;
+    top: 10px; /* Um pouco afastado da parte superior */
+    right: 10px; /* Alinhado à borda direita */
+    background-color: #fbeee0; /* Cor do botão */
+    color: #422800; /* Cor do texto do botão */
+    border: 2px solid #422800; /* Mesmo estilo da borda do botão */
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 30px; /* Borda arredondada como o botão */
+    box-shadow: #422800 4px 4px 0 0; /* Sombra como o botão */
+    display: none; /* Oculto por padrão */
+    z-index: 1000;
+}
+#gearIcon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#gearIcon:hover {
+    opacity: 1;
+}
+
+#advancedOptions {
+    margin-top: 20px;
+}
+
+#manualDataHora {
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+}
